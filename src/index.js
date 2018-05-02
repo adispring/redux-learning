@@ -1,4 +1,5 @@
 const redux = require('redux');
+const thunk = require('redux-thunk').default;
 const { createStore, applyMiddleware } = redux;
 const todos = require('./reducers/index');
 
@@ -14,6 +15,9 @@ const logger = store => next => action => {
     // 后面的 middleware 修改了它。
     return returnValue
   };
+
+  
+
 
 let store = createStore(
   todos,
